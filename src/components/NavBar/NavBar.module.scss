@@ -1,0 +1,51 @@
+nav{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 1000;
+    .logoBtn {
+        // background-color: #492877;
+        background: rgba(37, 37, 37, 0.533); 
+        border-bottom: 1px solid rgba(0, 0, 0, 0.133); 
+        backdrop-filter: blur(10px); 
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .leftPart {
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 50px;
+                .logoImg{
+                    width: 100px;
+                }
+            }  
+        }
+        .rightPart {
+            width: 50%;
+            .btn{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                .tab {
+                    text-decoration: none!important;
+                    
+                }
+                li{
+                    color: white;
+                    list-style: none;
+                    text-decoration: none;
+                    
+                }
+            }
+
+        }
+    }
+}
+
