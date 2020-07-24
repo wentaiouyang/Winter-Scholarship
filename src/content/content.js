@@ -8,7 +8,43 @@ let data = {
     "questionnaire":{
         "page":"Home",
         "description": " The AHKA (2016) Report Card on Physical Activity for Children and Young People recommends the delivery of at least 150 minutes per week of scheduled PE classes and organised school sports activities to all students, which are compulsory. For the purpose of this instrument, best practice is considered the delivery of 120 minutes of scheduled PE classes every week.In addition, the following are also used as indicators of best practice in this section:delivery of all scheduled PE classes for all students by a tertiary qualified PE specialist teacher.teacher/student ratio in PE lessons about the same to that of other subjects.a minimum of one professional development session per year specifically targeting PE for school staff who teach PE.not withholding PE as punishment."
+    },
+
+    "glossary":{
+        "ActiveTransport":"any mode of transportation between destinations that is human powered or non-motorised (e.g., walking, cycling, using a scooter, etc.).",
+
+        "ActivityCard":"a card that includes suggestions and/or instructions for a variety of activities students can choose to engage in.",
+
+        "ActivityZone": "a designated area used for a specific type of activity or a specific group of students.",
+
+        "‘CarFree’ Zone": "an area around the school where cars are not allowed to enter; it aims to encourage parking outside its boundaries and walking/riding the remainder of the way to school.",
+
+        "ClassroomPhysicalActivity": "(a) integration of physical activity within lessons to teach/reinforce academic content (e.g. active revisions; active curriculum concepts), or (b) use of short stand-alone physical activity breaks between/within lessons (e.g. stretching or dancing to a video routine).",
+
+        "IntraschoolSport": "sport sessions or competitions offered to students enrolled in a particular school (e.g., Friday afternoon sport).",
+
+        "InterschoolSport": "organised sport competitions in which a school competes against other schools.",
+
+        "PhysicalActivity": "any movement of the body that results in substantial increase of energy expenditure.",
+
+        "PhysicalActivityCommittee": "a diverse team of individuals from the school community (e.g., administrators, teachers, students, parents, nurse, etc.) or outside the school community (e.g., representatives from local organisations or health departments, health professionals, university staff, local businesses, etc.). Its responsibilities involve developing a school physical activity plan, overseeing its implementation, and regularly evaluating and updating the plan.",
+
+        "PhysicalActivityLeaderorCoordinator": "a person from the school community (e.g., PE teacher, classroom teacher, administrator, nurse, etc.) or outside the school community (e.g., community member, graduate student, etc.) who is passionate about promoting physical activity and health, and coordinates the school’s physical activity committee and plan.",
+
+        "PhysicalEducation": "part of the Health and Physical Education learning area of the Australian curriculum. It involves structured lessons that aim to develop the knowledge, understanding and skills to, among other ends, enable students to participate in a range of physical activities confidently, competently and creatively across their lifespan. Movement and physical activity, one of the strands of the HPE curriculum, is central to Physical Education, and involves moving our bodies, understanding movement, and learning through movement (sub-strands) while focusing on a variety of areas (active play and minor games, challenge and adventure activities, fundamental movement skills, games and sports, lifelong physical activities, and rhythmic and expressive movement).",
+
+        "ProfessionalDevelopment": "a variety of activities (e.g., seminars, workshops, conferences, graduate studies, online coursework, etc.) aiming to support ongoing learning of school staff and help develop or strengthen their professional knowledge,skills, and attitudes in particular areas of their work, so they can in turn improve the health, education and well-being of youth.",
+
+        "Recess": "schedule time(s) during the school day where students are provided with opportunities to engage in unstructured or structured physical activity.",
+
+        "RepresentativeCommittee": "including, as a minimum, a school administrator, a PE teacher, classroom teacher representative(s), student representative(s), and parent/community representative(s).",
+
+        "SpecialistPhysicalEducationteacher": "a teacher who has completed a tertiary qualification in PE.",
+
+        "SchoolDays": "days on which students are encouraged to actively commute to/from school.",
     }
+
+
 }
 
 export default data;

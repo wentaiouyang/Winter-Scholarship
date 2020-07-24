@@ -5,6 +5,37 @@
     width: 100%;
     background-size: cover;
     background-position: center center;
-    height: 100vh;
+    
+    position:absolute;
     //filter: brightness(60%);
+
+    .content{
+        position: relative;
+        margin-top: 10%;
+        margin-left: 10%;
+        margin-bottom:10;
+        background: gray;
+        border-radius: 60px;
+        width: 80%;
+        
+        color: white;
+        
+        h1{
+            padding-top: 5%;
+            
+        }
+
+        p{
+            
+            padding:0px 40px 20px 40px;
+            text-align: left;
+            background-color: hsl(0, 100%, 90%);
+            radius: 10px;
+
+            span{
+                font-size: 20px;
+            }
+        }
+        
+    }
 }
