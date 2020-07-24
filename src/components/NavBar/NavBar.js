@@ -23,6 +23,10 @@ export default function NavBar() {
                         <Link className={classes.tabs} to="/Glossary">
                             <li>Glossary</li>    
                         </Link>
+                        <Link className={classes.tabs .link} to="/Sidebar">
+                            <li>☰</li>      
+                        </Link>
+                       
                     </ul>
                 </div>
             </div>

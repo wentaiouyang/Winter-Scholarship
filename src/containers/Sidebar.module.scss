@@ -1,0 +1,36 @@
+
+.background{
+    background-image: url('../../src/img/about.jpg');
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    filter: brightness(80%);
+
+    ul{
+        margin-top:150px;
+        margin-bottom: 5rem;
+        overflow-y:auto;
+        color:white;
+        list-style:none;
+        max-height:90%;
+        text-align:center;
+
+    
+
+        li{
+            font-size: 3vh;
+            cursor:pointer;
+            text-transform: uppercase;
+            margin-bottom: 5rem;
+            
+
+        }
+        li:hover{
+            color:grey;
+        }
+        
+    
+    }
+}
