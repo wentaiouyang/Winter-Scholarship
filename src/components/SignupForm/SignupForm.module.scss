@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 .signupform {
   width: 280px;
   transition: 0.2s;
@@ -30,35 +30,3 @@
     border-radius: 20px;
   }
 }
-=======
-
-.signupform{
-    top: 180px;
-    position: absolute;
-    width: 280px;
-    transition: .2s;
-    left: 450px;
-
-    .input_field{
-        width: 100%;
-        padding: 10px 0;
-        margin: 5px 0;
-        border-left:0;
-        border-top: 0;
-        border-bottom: 0px solid #999;
-        outline: none;
-        background: transparent;
-                }
-    .submit_btn{
-        width :85%;
-        padding: 10px 30px;
-        cursor: pointer;
-        display: block;
-        margin: auto;
-        background-image:linear-gradient(to bottom right, #33adff , #7300e6);
-        border: 0;
-        border-radius: 20px;
-    }
-
-}
->>>>>>> 6cfe28e621365bc5b27dda8588823295780de803
