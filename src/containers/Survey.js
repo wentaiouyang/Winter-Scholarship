@@ -10,7 +10,6 @@ const Survey = ()=> {
      
             <FormSurvey/>
 
-
         </body>
         
     )

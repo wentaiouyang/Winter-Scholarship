@@ -1,0 +1,50 @@
+.body {
+    background-image: linear-gradient(to bottom right, #33adff, #7300e6);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    .form {
+      position: relative;
+      width: 480px;
+      height: 380px;
+      max-width: 1450px;
+      padding: 1em;
+      background-color: white;
+      color: white;
+      overflow: hidden;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  
+      .toggle {
+        width: 220px;
+        margin: 35px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 20px 9px #5757571f;
+        border-radius: 30px;
+        .btn {
+          color: white;
+          width: 110px;
+          height: 100%;
+          background-image: linear-gradient(to bottom right, #33adff, #7300e6);
+          border-radius: 30px;
+        }
+        button {
+          width: 110px;
+          padding: 10px 30px;
+          cursor: pointer;
+          background: transparent;
+          border: 0;
+          outline: none;
+          position: relative;
+        }
+      }
+    }
+  }

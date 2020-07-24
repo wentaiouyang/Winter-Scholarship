@@ -1,33 +1,34 @@
-import React,{useState, useContext} from 'react';
-import classes from './Login.module.scss';
+import React, { useState, useContext, useEffect } from "react";
 
-import LoginForm from '../components/LoginForm/LoginForm';
-import SignupForm from '../components/SignupForm/SignupForm';
+import firebase from "../components/Firebase/firebase";
 
-const LogIn = ()=> {
-    const [status, setStatus]=useState(1);
+import { Redirect } from "react-router-dom";
+import LoginContainer from "../components/LoginContainer/LoginContainer";
 
-    const setSignup = () => {
-        setStatus(0);
-    }
+function LogIn(props) {
+  const [state, setState] = useState({ user: [] });
 
-    const setLogin = () => {
-        setStatus(1);
-    }
+  const authListener = () => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        setState({ user });
+        //localStorage.setItem('user',user.uid);
+      } else {
+        setState({ user: null });
+        //localStorage.removeItem('user');
+      }
+    });
+  };
 
-    return (
-        <div className = {classes.body}>
-            <div className = {classes.form}>
-                <div className ={classes.toggle}>
-                    <div className= {classes.btn}></div>
-                    <button type="button" onClick={setLogin}>Log In</button>
-                    <button type="button" onClick={setSignup}>Sign Up</button>
-                </div>
-            </div>
-            {status===1?<LoginForm/>:<SignupForm/>} 
-        
-        </div>
-    )
+  useEffect(() => {
+    authListener();
+  }, [state.user]);
+
+  return (
+    <div>
+      <LoginContainer />
+    </div>
+  );
 }
 
 export default LogIn;

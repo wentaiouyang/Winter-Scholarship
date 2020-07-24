@@ -1,16 +1,17 @@
 //import * as firebase from "firebase/app";
 //import "firebse/auth";
-import firebase from 'firebase';
+import firebase from "firebase";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDeRvF_3di5hTyy_fR0mrhjo3ZjTg9Fk6Q",
-    authDomain: "school-survey-204d8.firebaseapp.com",
-    databaseURL: "https://school-survey-204d8.firebaseio.com",
-    projectId: "school-survey-204d8",
-    storageBucket: "school-survey-204d8.appspot.com",
-    messagingSenderId: "101150610386",
-    appId: "1:101150610386:web:3acad7ab66b2477088ae0b"
-  };
+  apiKey: "AIzaSyDRUGRSRjDtZREPu7HTW8nRzoILE0u3ATc",
+  authDomain: "ascendant-shade-231710.firebaseapp.com",
+  databaseURL: "https://ascendant-shade-231710.firebaseio.com",
+  projectId: "ascendant-shade-231710",
+  storageBucket: "ascendant-shade-231710.appspot.com",
+  messagingSenderId: "1064049254578",
+  appId: "1:1064049254578:web:cc49a3975ab3301e6fe9ab",
+  measurementId: "G-99TFRYYGZ1",
+};
 firebase.initializeApp(firebaseConfig);
 
 export default firebase;

@@ -1,56 +1,61 @@
-import React,{useState, useContext} from 'react';
-import classes from './LoginForm.module.scss';
-import firebase from '../../components/Firebase/firebase';
-import { AppContext } from '../../context/AppContext';
+import React, { useState, useContext } from "react";
+import classes from "./LoginForm.module.scss";
+import firebase from "../../components/Firebase/firebase";
+import { AppContext } from "../../context/AppContext";
+// import { withRouter } from "react-router-dom";
 
 const LoginForm = (props) => {
-    const setAuth = useContext(AppContext).setAuth;
-    const [userState,setUserState] = useState({
-        email: "",
-        password: "",
-    });
+  const setAuth = useContext(AppContext).setAuth;
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleEmail = (e) => {
+    console.log(e.target.value);
+    setEmail(e.target.value);
+  };
 
-    const handleEmail = (e) => {
-        console.log(e.target.value);
-        setUserState({
-            email:e.target.value,
-        })
-    }
+  const handlePass = (e) => {
+    console.log(e.target.value);
+    setPassword(e.target.value);
+  };
 
-    const handlePass = (e) => {
-        console.log(e.target.value);
-        setUserState({
-            password:e.target.value,
-        })
-    }
+  const login = (e) => {
+    e.preventDefault();
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((res) => {
+        console.log(email, password);
+        sessionStorage.setItem("isLogin", true);
+        // props.auth();
+        console.log(props.history);
+      })
+      .catch((err) => {
+        console.log(err);
+        console.log(email, password);
+      });
+  };
 
-
-
-    const login = (e) => {
-        e.preventDefault();
-        firebase.auth()
-        .signInWithEmailAndPassword(`${userState.email}`,`${userState.password}`)
-        .then((res)=>{
-            console.log(userState.email,userState.password);
-            setAuth();
-            props.history.push("/Survey");
-        })
-        .catch((err)=>{
-            console.log(err);
-            console.log(userState.email,userState.password);
-        })
-    }
-    
-    
-    return (
-        <div>
-            <form className={classes.loginform}>
-                <input type="text" className={classes.input_field} onChange={handleEmail} placeholder="enter email" required></input>
-                <input type="password" className={classes.input_field} onChange={handlePass} placeholder="enter password" required></input>
-                <button type="submit" className={classes.submit_btn} onClick={login}>log in</button>
-            </form>  
-        </div>
-    )
-}
+  return (
+    <form className={classes.loginform}>
+      <input
+        type="text"
+        className={classes.input_field}
+        onChange={handleEmail}
+        placeholder="enter email"
+        required
+      ></input>
+      <input
+        type="password"
+        className={classes.input_field}
+        onChange={handlePass}
+        placeholder="enter password"
+        required
+      ></input>
+      <button type="submit" className={classes.submit_btn} onClick={login}>
+        Login
+      </button>
+    </form>
+  );
+};
 
 export default LoginForm;
