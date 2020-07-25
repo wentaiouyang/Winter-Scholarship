@@ -3,7 +3,7 @@ import classes from "./LoginContainer.module.scss";
 import LoginForm from "../LoginForm/LoginForm";
 import SignupForm from "../SignupForm/SignupForm";
 
-export default function LoginContainer() {
+export default function LoginContainer(props) {
   const [status, setStatus] = useState(1);
   const setSignup = () => {
     setStatus(0);
@@ -31,7 +31,7 @@ export default function LoginContainer() {
             Sign Up
           </button>
         </div>
-        {status === 1 ? <LoginForm /> : <SignupForm />}
+        {status === 1 ? <LoginForm LoginSuccess={props.LoginSuccess} LoginFail={props.LoginFail}/> : <SignupForm />}
       </div>
     </div>
   );

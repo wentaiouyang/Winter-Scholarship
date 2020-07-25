@@ -1,26 +1,21 @@
-.container{
+.container {
+  content: "";
+  display: table;
+  width: 100%;
+  padding-top: 10vh;
+  .survey {
+    margin: auto;
+    width: 50%;
+    height: 90vh;
+    // margin-top: 100px;
+    border-radius: 10px;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    display: grid;
+    color: white;
 
-    
-    
-    .survey{
-    
-        margin:auto;
-        width:500px;
-        
-        padding-top: 10%;
-        margin-top:auto;
-    
-        border-radius:10px;
-        text-align:left;
-        background-color:rgba(0,0,0,0.6);
-        font-size:14px;
-        display:grid;
-        color:white;
-
-        .options{
-
-        }
-    
+    .options {
     }
+  }
 }
-
