@@ -5,6 +5,7 @@ import Routes from "./Routes/Router";
 import firebase from "./components/Firebase/firebase";
 import { AppContext } from "./context/AppContext";
 import { ToastProvider } from "react-toast-notifications";
+// import { DataProcessor } from "./dataprocessor";
 
 const SHEET_ID = "1p-CjJgmzIRmepETjpt7fJTPFiSypiebX-E0ZBUgUHX8";
 const ACCESS_TOKEN =
@@ -13,6 +14,8 @@ const ACCESS_TOKEN =
 function App() {
   const [state, setState] = useState({ user: [] });
   const [result, setResult] = useState("");
+
+  // fetch data
   const getSheetValues = async () => {
     const request = await fetch(
       `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/A:CM`,
@@ -25,10 +28,15 @@ function App() {
     );
     const data = await request.json();
     console.log(data);
+    console.log(state.user);
+    setResult(data);
   };
+  // console.log(1, data);
+  // var dataProcessor = new DataProcessor(result);
 
   useEffect(() => {
     getSheetValues();
+    // dataProcessor.getPersonalData(state.user.b.email);
   }, [result]);
 
   const authListener = () => {
