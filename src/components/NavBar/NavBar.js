@@ -51,6 +51,9 @@ export default function NavBar() {
             <Link className={classes.tabs} to="/Glossary">
               <li>GLOSSARY</li>
             </Link>
+            <Link className={classes.tabs} to="/Window">
+              <li>Pop Up</li>
+            </Link>
             {user ? (
               ""
             ) : (

@@ -1,15 +1,15 @@
 import React from 'react';
 import classes from './Survey.module.scss';
-import FormSurvey from'../components/Form/FormSurvey';
+import HtmlForm from'../components/Form/HtmlForm';
 
 const Survey = ()=> {
 
     return(
 
         <body className={classes.container}>
-     
-            <FormSurvey/>
-
+            <div className={classes.font}>
+            <HtmlForm/>
+            </div>
         </body>
         
     )
