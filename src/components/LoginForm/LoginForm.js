@@ -26,10 +26,11 @@ const LoginForm = (props) => {
       .then((res) => {
         console.log(email, password);
         sessionStorage.setItem("isLogin", true);
-        // props.auth();
+        props.LoginSuccess();
         console.log(props.history);
       })
       .catch((err) => {
+        props.LoginFail();
         console.log(err);
         console.log(email, password);
       });

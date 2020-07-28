@@ -3,7 +3,9 @@ import Home from '../containers/Home';
 import Survey from '../containers/Survey';
 import LogIn from '../containers/LogIn';
 import Glossary from '../containers/Glossary';
+import Window from '../containers/Window'
 import Sidebar from '../containers/Sidebar';
+
 import { Route, Switch } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 
@@ -16,6 +18,7 @@ export default function Routes() {
             <Route exact path="/LogIn" component={LogIn}/>
             <Route exact path="/Glossary" component={Glossary}/>
             <Route exact path="/Sidebar" component={Sidebar}/>
+            <Route exact path="/Window" component={Window}/>
 
           </Switch>
         </div>

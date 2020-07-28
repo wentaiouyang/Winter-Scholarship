@@ -1,0 +1,29 @@
+.toggleMenu {
+  width: 20%;
+  height: 100vh;
+  background-color: #000000cf;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: all ease-in-out 200ms;
+  position: absolute;
+  right: 0px;
+}
+.toggle_nav_tags {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  list-style: none;
+  padding: 30px 0;
+}
+.toggle_nav_tags > li {
+  margin: 45px;
+}
+.toggle_navTag {
+  color: white;
+  padding: 5px;
+}
+.toggle_navTag {
+  text-decoration: none;
+}

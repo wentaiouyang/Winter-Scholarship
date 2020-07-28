@@ -1,32 +1,37 @@
 import React, { useState, useContext, useEffect } from "react";
-
 import firebase from "../components/Firebase/firebase";
-
 import { Redirect } from "react-router-dom";
 import LoginContainer from "../components/LoginContainer/LoginContainer";
+import { AppContext } from "../context/AppContext";
+import { useToasts } from 'react-toast-notifications';
 
 function LogIn(props) {
-  const [state, setState] = useState({ user: [] });
+  const {user} = useContext(AppContext);
+  const { addToast } = useToasts();
 
-  const authListener = () => {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        setState({ user });
-        //localStorage.setItem('user',user.uid);
-      } else {
-        setState({ user: null });
-        //localStorage.removeItem('user');
-      }
+  const LoginSuccess = () =>{
+    addToast('You are logged in', {
+      appearance: 'success',
+      autoDismiss: true,
+      transitionDuration: 300,
+      autoDismissTimeout: 2000,
     });
-  };
+  }
 
-  useEffect(() => {
-    authListener();
-  }, [state.user]);
+  const LoginFail = () =>{
+    addToast('Login Error', {
+      appearance: 'error',
+      autoDismiss: true,
+      transitionDuration: 300,
+      autoDismissTimeout: 2000,
+    });
+  }
 
-  return (
+  return user ? (
+    <Redirect to="/Survey" />
+  ) : (
     <div>
-      <LoginContainer />
+      <LoginContainer LoginSuccess={LoginSuccess} LoginFail={LoginFail}/>
     </div>
   );
 }
