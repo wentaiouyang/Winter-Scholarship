@@ -107,8 +107,7 @@ function listMajors() {
       var myResponses = JSON.stringify(responses);
       phpResquest(myResponses,"all_responses.php");
       phpResquest(myJSON,"all_questions.php");
-      console.log("done!");
-      phpGetQuestions("leaves_sg@outlook.com", "showresponses.php");
+      appendPre("Successfully fetched data from sever!");
       
 
       
