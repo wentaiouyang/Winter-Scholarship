@@ -4,8 +4,8 @@ $all_responses = json_decode(fread($myfile,filesize("ALL_RESPONSES.json")));
 fclose($myfile);
 
 // get the q parameter from URL
-//$q = $_REQUEST["q"];
-$q = "leaves_sg@outlook.com";
+$q = $_REQUEST["q"];
+//$q = "leaves_sg@outlook.com";
 if($q == "all"){
     $output = json_encode($all_responses);
 }else{
