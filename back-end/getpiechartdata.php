@@ -10,9 +10,9 @@ fclose($myfile2);
 // get the q parameter from URL
 $q = $_REQUEST["q"];
 //$q = "leaves_sg@outlook.com";
-
+$output = "There is no such data!";
 for($i = 0;$i<count($all_responses);$i++){
-    if($all_responses[$i]['email'] = $q){
+    if($all_responses[$i]['email'] == $q){
         $response = $all_responses[$i]['response'];
     }
 }
