@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./Routes/Router";
+import axios from "axios";
 import firebase from "./components/Firebase/firebase";
 import { AppContext } from "./context/AppContext";
 import { ToastProvider } from "react-toast-notifications";
@@ -14,23 +15,35 @@ function App() {
   const [state, setState] = useState({ user: [] });
   const [result, setResult] = useState("");
   const user = useContext(AppContext);
-  const getSheetValues = async () => {
-    const request = await fetch(
-      `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/A:CM`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${ACCESS_TOKEN}`,
-        },
-      }
-    );
-    const data = await request.json();
-    console.log(data);
+
+  const getData = () => {
+    if (localStorage.user) {
+      const pie_url = "http://localhost:80/back-end/getpiechartdata.php";
+      const bar_url = "http://localhost:80/back-end/getbarchartdata.php";
+      const formData = new FormData();
+      formData.append("user", "leaves_sg@outlook.com");
+      axios
+        .post(pie_url, formData)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      axios
+        .post(bar_url, formData)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
 
   useEffect(() => {
-    getSheetValues();
     console.log(localStorage.user);
+    getData();
   }, [result]);
 
   const authListener = () => {

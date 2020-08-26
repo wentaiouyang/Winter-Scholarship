@@ -97,23 +97,18 @@ function listMajors() {
     spreadsheetId: '1p-CjJgmzIRmepETjpt7fJTPFiSypiebX-E0ZBUgUHX8',
     range: 'reply1',
   }).then(function(response) {
+    console.log(1,response.result.values);
     var range = response.result;
     if (range.values.length > 0) {
+      console.log(2,range.values)
       this.dataprocessor = new DataProcessor(range);
       titles = this.dataprocessor.getTitles();
-      responses = this.dataprocessor.getResponses();
+      console.log(3,titles);
+      console.log(this.dataprocessor.getData4Graph("leaves_sg@outlook.com"));
 
-      var myJSON = JSON.stringify(titles);
-      var myResponses = JSON.stringify(responses);
-      phpResquest(myResponses,"all_responses.php");
-      phpResquest(myJSON,"all_questions.php");
-      console.log("done!");
-      phpGetQuestions("leaves_sg@outlook.com", "showresponses.php");
-      
-
-      
-      
-      
+      for(i=0;i<titles.length;i++){
+        appendPre(titles[i]);
+      }
 
 
     } else {
@@ -122,38 +117,4 @@ function listMajors() {
   }, function(response) {
     appendPre('Error: ' + response.result.error.message);
   });
-}
-
-
-
-function phpResquest(str,phpfile){
-  if (str.length == 0) {
-      console.log("The request content is empty!");
-  } else {
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-              console.log(this.responseText);
-          }
-      };
-      xmlhttp.open("POST", phpfile + "?q=" + str, true);
-      xmlhttp.send();
-  }
-}
-
-function phpGetQuestions(str = "all", phpfile){
-  var result;
-  var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-              console.log(this.responseText);
-              result = JSON.parse(this.responseText);
-              console.log(1,result);
-              for(let i =0;i<result.length;i++){
-                appendPre(result[i]);
-              }
-          }
-      };
-      xmlhttp.open("POST", phpfile + "?q=" + str, true);
-      xmlhttp.send();
 }
