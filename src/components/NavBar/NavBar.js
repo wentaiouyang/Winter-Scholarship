@@ -28,6 +28,7 @@ export default function NavBar() {
           console.log("error");
         }
       );
+    localStorage.removeItem("user");
   };
 
   let toggleNav;
@@ -62,7 +63,13 @@ export default function NavBar() {
               </Link>
             )}
           </ul>
-          {user ? <button className={classes.logout} onClick={handleLogout}>Logout</button> : ""}
+          {user ? (
+            <button className={classes.logout} onClick={handleLogout}>
+              Logout
+            </button>
+          ) : (
+            ""
+          )}
           <div className="menuBtn">
             <MenuButton open={open} onClick={handleClick} />
           </div>
