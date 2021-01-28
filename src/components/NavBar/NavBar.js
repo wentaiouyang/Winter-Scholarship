@@ -1,19 +1,19 @@
-import React, { useContext, useState } from "react";
-import logo from "../../img/logo.png";
-import classes from "./NavBar.module.scss";
-import firebase from "../Firebase/firebase";
-import MenuButton from "../HamburgerButton/HamburgerButton";
-import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
-import { AppContext } from "../../context/AppContext";
-import ToggleNav from "../ToggleNav/ToggleNav";
+import React, { useContext, useState } from "react"
+import logo from "../../img/logo.png"
+import classes from "./NavBar.module.scss"
+import firebase from "../Firebase/firebase"
+import MenuButton from "../HamburgerButton/HamburgerButton"
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom"
+import { AppContext } from "../../context/AppContext"
+import ToggleNav from "../ToggleNav/ToggleNav"
 
 export default function NavBar() {
-  const { user } = useContext(AppContext);
-  const [open, setOpen] = useState(false);
+  const { user } = useContext(AppContext)
+  const [open, setOpen] = useState(false)
 
   const handleClick = () => {
-    setOpen(!open);
-  };
+    setOpen(!open)
+  }
 
   const handleLogout = () => {
     firebase
@@ -21,19 +21,19 @@ export default function NavBar() {
       .signOut()
       .then(
         function () {
-          console.log("success");
-          console.log(user);
+          console.log("success")
+          console.log(user)
         },
         function (error) {
-          console.log("error");
+          console.log("error")
         }
-      );
-    localStorage.removeItem("user");
-  };
+      )
+    localStorage.removeItem("user")
+  }
 
-  let toggleNav;
+  let toggleNav
   if (open) {
-    toggleNav = <ToggleNav bgClick={handleClick} />;
+    toggleNav = <ToggleNav bgClick={handleClick} />
   }
 
   return (
@@ -52,8 +52,8 @@ export default function NavBar() {
             <Link className={classes.tabs} to="/Glossary">
               <li>GLOSSARY</li>
             </Link>
-            <Link className={classes.tabs} to="/Window">
-              <li>Pop Up</li>
+            <Link className={classes.tabs} to="/results">
+              <li>RESULTS</li>
             </Link>
             {user ? (
               ""
@@ -77,5 +77,5 @@ export default function NavBar() {
       </div>
       {toggleNav}
     </nav>
-  );
+  )
 }
