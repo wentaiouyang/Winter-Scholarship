@@ -18,6 +18,7 @@ const Survey = () => {
     <body className={classes.container}>
       <div className={classes.content}>
         <div className={classes.font}>
+          <h1>Physical Activity Survey</h1>
           <form onSubmit={formik.handleSubmit}>
             {questions.map((q, i) => {
               return (
@@ -40,7 +41,9 @@ const Survey = () => {
               )
             })}
 
-            <button type={'submit'}>Submit</button>
+            <button className={classes.button} type={'submit'}>
+              Submit
+            </button>
           </form>
         </div>
       </div>
