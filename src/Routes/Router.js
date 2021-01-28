@@ -5,10 +5,10 @@ import LogIn from "../containers/LogIn"
 import Glossary from "../containers/Glossary"
 import Window from "../containers/Window"
 import Sidebar from "../containers/Sidebar"
-import Visualization from "../components/Visualization/Visualization"
 
 import { Route, Switch } from "react-router-dom"
 import PrivateRoute from "./PrivateRoute"
+import Results from "../containers/Results"
 
 export default function Routes() {
   return (
@@ -20,7 +20,7 @@ export default function Routes() {
         <Route exact path="/Glossary" component={Glossary} />
         <Route exact path="/Sidebar" component={Sidebar} />
         <Route exact path="/Window" component={Window} />
-        <Route exact path="/results" component={Visualization} />
+        <Route exact path="/results" component={Results} />
       </Switch>
     </div>
   )

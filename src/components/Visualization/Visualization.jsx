@@ -3,7 +3,7 @@ import { ResponsivePie } from "@nivo/pie"
 import PlaceHolder from "../PlaceHolder/PlaceHolder"
 import classes from "./Visualization.module.scss"
 
-function Visualization() {
+function Visualization({ size }) {
   const [formData, setFormData] = useState(localStorage.getItem("data") || null)
   let data = []
   if (formData) {
@@ -42,10 +42,16 @@ function Visualization() {
   }
 
   return (
-    <div className={classes.container}>
+    <div
+      className={size === "small" ? classes.sm_container : classes.container}
+    >
       <ResponsivePie
         data={data}
-        margin={{ top: 150, right: 80, bottom: 90, left: 80 }}
+        margin={
+          size === "small"
+            ? { top: 90, right: 80, bottom: 90, left: 80 }
+            : { top: 150, right: 80, bottom: 90, left: 80 }
+        }
         innerRadius={0.5}
         padAngle={0.7}
         cornerRadius={10}

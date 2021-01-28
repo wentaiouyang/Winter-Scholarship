@@ -1,0 +1,24 @@
+/* slide down the menu */
+.slideDown-enter {
+  opacity: 0.01;
+  z-index: 10000;
+  transform: translateY(-50px);
+}
+.slideDown-enter.slideDown-enter-active {
+  opacity: 1;
+  transition: all 300ms ease-in;
+  z-index: 10000;
+  transform: translateY(0px);
+}
+.slideDown-exit {
+  opacity: 1;
+  z-index: 10000;
+  transform: translateY(0px);
+}
+
+.slideDown-exit.slideDown-exit-active {
+  opacity: 0.01;
+  transition: all 300ms ease-in;
+  z-index: 10000;
+  transform: translateY(-50px);
+}
