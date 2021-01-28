@@ -1,18 +1,18 @@
-import React from "react"
-import classes from "./Survey.module.scss"
-import questions from "../questions/questions"
-import { useFormik } from "formik"
+import React from 'react'
+import classes from './Survey.module.scss'
+import questions from '../questions/questions'
+import { useFormik } from 'formik'
 
 const Survey = () => {
   const obj = {}
   questions.forEach((item, index) => {
-    obj[item.quesNum] = ""
+    obj[item.quesNum] = ''
   })
   const formik = useFormik({
     initialValues: obj,
-    onSubmit: (value) => {
-      localStorage.setItem("data", JSON.stringify(value))
-    },
+    onSubmit: value => {
+      localStorage.setItem('data', JSON.stringify(value))
+    }
   })
   return (
     <body className={classes.container}>
@@ -39,7 +39,7 @@ const Survey = () => {
             )
           })}
 
-          <button type={"submit"}>Submit</button>
+          <button type={'submit'}>Submit</button>
         </form>
       </div>
     </body>
