@@ -16,31 +16,33 @@ const Survey = () => {
   })
   return (
     <body className={classes.container}>
-      <div className={classes.font}>
-        <form onSubmit={formik.handleSubmit}>
-          {questions.map((q, i) => {
-            return (
-              <div>
-                <h4>{q.quesName}</h4>
-                {q.answer.map((a, i) => {
-                  return (
-                    <div>
-                      <input
-                        {...formik.getFieldProps(q.quesNum)}
-                        type="radio"
-                        name={q.quesNum}
-                        value={a}
-                      />
-                      <p>{q.options[i]}</p>
-                    </div>
-                  )
-                })}
-              </div>
-            )
-          })}
+      <div className={classes.content}>
+        <div className={classes.font}>
+          <form onSubmit={formik.handleSubmit}>
+            {questions.map((q, i) => {
+              return (
+                <div>
+                  <h4>{q.quesName}</h4>
+                  {q.answer.map((a, i) => {
+                    return (
+                      <div className={classes.input_wrapper}>
+                        <input
+                          {...formik.getFieldProps(q.quesNum)}
+                          type="radio"
+                          name={q.quesNum}
+                          value={a}
+                        />
+                        <p>{q.options[i]}</p>
+                      </div>
+                    )
+                  })}
+                </div>
+              )
+            })}
 
-          <button type={'submit'}>Submit</button>
-        </form>
+            <button type={'submit'}>Submit</button>
+          </form>
+        </div>
       </div>
     </body>
   )
